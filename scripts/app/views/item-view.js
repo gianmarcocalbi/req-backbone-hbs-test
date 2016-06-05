@@ -10,17 +10,22 @@ define([
 ], function ($, Backbone, Handlebars, itemTemplate) {
     "use strict";
     var itemView = Backbone.View.extend({
-        // La view crea un oggetto con un certo tag = tagName
+        // La view crea un oggetto con un certo tag = tagName.
+        // È utile anche per mantenere un collegamento logico tra la View
+        // javascript e gli oggetti nel DOM in HTML.
         tagName : "li",
-        
-        //template html della view 
+
+        // Template html della view.
+        // Importo il template creato secondo il formato (.hbs) del template
+        // engine Handlebars e lo compilo in codice utilizzabile in
+        // javascript.
         template : Handlebars.compile(itemTemplate),
-        
-        // Si può associare ad ogni evento javascript una funzione
-        // della view
+
+        // Si può associare ad ogni evento nella View una funzione javascript.
         events : {
-            // Quando si cliecca il tast con classe .delete-item allora
-            // viene triggherata la funzione deleteItem() che rimuove la view
+            // Quando si clicca il tasto con classe '.delete-item' allora
+            // viene triggherata la funzione deleteItem() che rimuove la
+            // view dell'oggetto.
             "click .delete-item" : "deleteItem"
         },
 

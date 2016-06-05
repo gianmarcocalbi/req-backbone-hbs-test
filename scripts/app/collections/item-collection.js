@@ -4,8 +4,13 @@ define([
 ], function (Backbone, itemModel) {
     "use strict";
     var itemsCollection = Backbone.Collection.extend({
+        // Modello di riferimento.
         model : itemModel,
-        comparator : 'order',
+
+        // Ordine in cui tenere gli oggetti nella collection.
+        comparator: 'order', // 'order' = Ordine di inserimento.
+
+        // Url con cui effettuare sync. Ora è nullo.
         url: '#'
     });
 
